@@ -36,15 +36,15 @@ const HamburgerMenu = () => {
                     onClick={toggleMenu}
                     className="p-4 focus:outline-none"
                 >
-                    Home
+                    Close
                 </button>
                 {/* Navigation du menu */}
                 <nav className="p-4">
                     <ul>
-                        <li className="mb-2"><a href="#home">Tous les produits</a></li>
-                        <li className="mb-2"><a href="#about">Canapés</a></li>
-                        <li className="mb-2"><a href="#services">Chaises</a></li>
-                        <li className="mb-2"><a href="#contact">Tables</a></li>
+                        <li className="mb-2"><a href="Catalogue">Tous les produits</a></li>
+                        <li className="mb-2"><a href="Canapes">Canapés</a></li>
+                        <li className="mb-2"><a href="Chaises">Chaises</a></li>
+                        <li className="mb-2"><a href="Tables">Tables</a></li>
                     </ul>
                 </nav>
             </div>
