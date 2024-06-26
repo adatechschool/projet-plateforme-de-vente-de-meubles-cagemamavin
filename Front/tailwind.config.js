@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default {
   content: [
     "./index.html",
@@ -13,9 +14,12 @@ export default {
     },
 =======
 module.exports = {
+=======
+export default {
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},

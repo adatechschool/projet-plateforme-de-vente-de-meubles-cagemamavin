@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+<<<<<<< HEAD
 @tailwind utilities;
 
 @font-face {
@@ -8,3 +9,6 @@
     font-weight: normal;
     font-style: normal;
 }
+=======
+@tailwind utilities;
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)

@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Card } from 'flowbite-react';
 
 const Home = (props) => {
@@ -14,8 +15,20 @@ const Home = (props) => {
                     className="w-full h-full object-cover"
                 />
             </Card>
+=======
+import HamburgerMenu from '../components/HamburgerMenu';
+
+const Home = () => {
+    return (
+        <div>
+            <HamburgerMenu />
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
         </div>
     );
 };
 
+<<<<<<< HEAD
 export default Home;
+=======
+export default Home;
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
