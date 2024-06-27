@@ -41,10 +41,11 @@ const HamburgerMenu = () => {
                 {/* Navigation du menu */}
                 <nav className="p-4">
                     <ul>
-                        <li className="mb-2"><a href="Catalogue">Tous les produits</a></li>
-                        <li className="mb-2"><a href="Canapes">Canapés</a></li>
-                        <li className="mb-2"><a href="Chaises">Chaises</a></li>
-                        <li className="mb-2"><a href="Tables">Tables</a></li>
+                        <li className="mb-2"><a href="/home">Home</a></li>
+                        <li className="mb-2"><a href="/catalogue">Tous les produits</a></li>
+                        <li className="mb-2"><a href="/canapes">Canapés</a></li>
+                        <li className="mb-2"><a href="/chaises">Chaises</a></li>
+                        <li className="mb-2"><a href="/tables">Tables</a></li>
                     </ul>
                 </nav>
             </div>
