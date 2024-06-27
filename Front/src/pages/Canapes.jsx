@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import '../index.css';
 
@@ -9,7 +10,7 @@ const Canapes = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("https://run.mocky.io/v3/437f5cb2-3be3-453f-b4ef-23a8c625a2c9");
+                const response = await fetch("https://run.mocky.io/v3/ee164a5e-a3ab-4d7d-8388-23ca566aa010");
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
@@ -24,22 +25,23 @@ const Canapes = () => {
         fetchData();
     }, []);
 
-
     return (
         <div>
             <h1>Canapés</h1>
-            <ul className='canapes_list'>
+            <div className="grid grid-cols-4 gap-5">
                 {canapes.map(canape => (
-                    <li key={canape.id}>
-                        <h2>{canape.name}</h2>
-                        <p>Prix : {canape.price}€</p>
-                        <img src={canape.image} alt={canape.name} /> {/* renvoie le nom du canapé si pas d'image */}
-                        {/* <p>Description : {canape.description}</p>
-                        <p>Dimensions : {canape.dimensions}</p> */}
+                    <div key={canape.id} className="grid grid-cols-1 gap-5 mb-4">
+                        <div className="bg-white shadow-md rounded p-4">
+                            <Link to={`/canapes/${canape.id}`}>
+                                <img src={canape.image} style={{ cursor: 'pointer' }} alt={canape.name} className="w-full h-48 object-cover" />
+                            </Link>
+                            <h2>{canape.name}</h2>
+                            <p>Prix : {canape.price}€</p>
+                        </div>
 
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
