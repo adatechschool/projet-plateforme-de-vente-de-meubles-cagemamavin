@@ -5,7 +5,9 @@ import Catalogue from "./pages/Catalogue";
 import Canapes from "./pages/Canapes";
 import CanapeDetails from './pages/CanapeDetails';
 import Chaises from "./pages/Chaises";
+import ChaiseDetails from './pages/ChaiseDetails';
 import Tables from "./pages/Tables";
+import TableDetails from './pages/TableDetails';
 import Header from './components/Header';
 import './index.css'
 
@@ -26,7 +28,9 @@ function App() {
           <Route path="/canapes" element={<Canapes />} />
           <Route path="/canapes/:id" element={<CanapeDetails />} />
           <Route path="/chaises" element={<Chaises />} />
+          <Route path="/chaises/:id" element={<ChaiseDetails />} />
           <Route path="/tables" element={<Tables />} />
+          <Route path="/tables/:id" element={<TableDetails />} />
         </Routes>
       </BrowserRouter>
     </>
