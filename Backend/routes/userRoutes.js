@@ -20,39 +20,15 @@ const router = express.Router();
 const getAllUsers = (req, res, next) => {
   // BUILD QUERY
 
-  connection.query("SELECT * FROM users;", (error, results, fields) => {
-    console;
-    if (error) {
-      console.error("Error retrieving users:", error);
-      res.status(500).json({
-        status: "error",
-        message: "Internal server error",
-      });
-      return;
+  connection.query("SELECT * FROM categories", (err, rows) => {
+    if (err) {
+      console.error("Error fetching categories data:", err.message);
+      process.exit(1);
     }
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        users: results,
-      },
-    });
+    console.log("Categories data:");
+    console.log(rows); // Affiche les données de la table categories
   });
-  // const [rows] = await connection.promise().query("SELECT * FROM users; ");
-  // console.log(req.query);
-  // console.log(rows);
-
-  // // EXECUTE QUERY
-  // // so here we are creating an object
-
-  // // SEND RESPONSE
-  // // const users = "Hello World";
-  // res.status(200).json({
-  //   status: "success",
-  //   data: {
-  //     users: rows, // if the key and the value have the same value we dont need to specify both just one
-  //   },
-  // });
 };
 router.route("/").get(getAllUsers);
 // .post(createUser);
