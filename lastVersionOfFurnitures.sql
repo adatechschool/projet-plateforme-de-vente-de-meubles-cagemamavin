@@ -31,8 +31,15 @@ CREATE TABLE IF NOT EXISTS `furniture_shop`.`furnitures` (
   `posted_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` INT NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_furnitures_category` (`category_id` ASC) VISIBLE)
-ENGINE = InnoDB
+INDEX `fk_furnitures_category` (`category_id` ASC) VISIBLE,
+
+  CONSTRAINT `fk_furnitures_category`
+
+    FOREIGN KEY (`category_id`)
+
+    REFERENCES `furniture_shop`.`categories` (`id`)
+
+)ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -41,16 +48,18 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `furniture_shop`.`categories`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `furniture_shop`.`categories` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `type` VARCHAR(255) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_furnitures_category`
-    FOREIGN KEY (`id`)
-    REFERENCES `furniture_shop`.`furnitures` (`category_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
 
+  `id` INT NOT NULL AUTO_INCREMENT,
+
+  `type` VARCHAR(255) NULL DEFAULT NULL,
+
+  PRIMARY KEY (`id`)
+
+) ENGINE = InnoDB
+
+DEFAULT CHARACTER SET = utf8mb4
+
+COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
 -- Table `furniture_shop`.`users`
