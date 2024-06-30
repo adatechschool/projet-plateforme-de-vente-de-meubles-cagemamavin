@@ -1,4 +1,3 @@
-// src/pages/CanapeDetails.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -31,12 +30,15 @@ const CanapeDetails = () => {
     return (
         <div className="canape-details p-4">
             {canape.map(canape => (
-                <div key={canape.id} >
-                    <img src={canape.image} alt={canape.name} />
-                    <h1 className="text-2xl font-bold">{canape.name}</h1>
-                    <p className="text-lg text-gray-700">{canape.price} €</p>
-                    <p className="text-lg mt-4">{canape.description}</p>
-                    <p className="text-lg mt-4">Dimensions: {canape.dimensions}</p>
+                <div key={canape.id} className="flex items-center" >
+                    <img src={canape.image} alt={canape.name} className="w-full md:max-w-md lg:max-w-lg xl:max-w-xl" />
+                    {/* Utilisation de max-w-md, max-w-lg, max-w-xl pour ajuster la taille sur différents écrans */}
+                    <div className="ml-4">
+                        <h1 className="text-2xl font-bold">{canape.name}</h1>
+                        <p className="text-lg text-gray-700">{canape.price} €</p>
+                        <p className="text-lg mt-4">{canape.description}</p>
+                        <p className="text-lg mt-4">Dimensions: {canape.dimensions}</p>
+                    </div>
                 </div>
 
             ))}

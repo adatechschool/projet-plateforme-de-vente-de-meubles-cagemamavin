@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Route } from 'react-router-dom';
-// import Header from '../components/Header';
 import '../index.css';
 
 const Tables = () => {
