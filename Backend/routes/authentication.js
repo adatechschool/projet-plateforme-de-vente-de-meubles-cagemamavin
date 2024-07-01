@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const connection = require("./../../db");
+const connection = require("./../db");
 const dotenv = require("dotenv");
 
 dotenv.config({ path: "./config.env" });

@@ -3,7 +3,7 @@ const express = require("express");
 // const app = require("./../../app.js");
 const router = express.Router();
 
-const connection = require("./../../db.js");
+const connection = require("./../db.js");
 
 const getAllUsers = (req, res, next) => {
   connection.query("SELECT * FROM users", (err, rows) => {
