@@ -1,7 +1,7 @@
 const express = require("express");
 // const mysql2 = require("mysql2");
 const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "../config.env" });
 const router = express.Router();
 // chemin de routes vers les dossiers "locaux"
 const userRoutes = require("./routes/userRoutes");
