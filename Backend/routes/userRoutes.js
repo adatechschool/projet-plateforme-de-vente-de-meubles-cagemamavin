@@ -20,7 +20,7 @@ const getAllUsers = (req, res, next) => {
 
     res.status(200).json({
       status: "success",
-      fdgsfjkgsj: {
+      data: {
         users: rows, // Affiche les données de la table categories
       },
     });
