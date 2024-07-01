@@ -16,6 +16,7 @@ import Header from './components/Header';
 import './index.css'
 import Admin from './pages/Admin';
 import Contact from './pages/Contact';
+<<<<<<< HEAD
 =======
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reactLogo from './assets/react.svg'
@@ -23,12 +24,17 @@ import viteLogo from '/vite.svg'
 import Home from "./pages/Home";
 import HamburgerMenu from './components/HamburgerMenu';
 >>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
+=======
+>>>>>>> 22e72a0 (Ajout du footer)
 
 function App() {
 
   return (
     <>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 22e72a0 (Ajout du footer)
       <Router>
         <div>
           <header>
