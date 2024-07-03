@@ -6,7 +6,7 @@ const router = express.Router();
 const connection = require("./../db.js");
 
 const getAllUsers = (req, res, next) => {
-  connection.query("SELECT * FROM users", (err, rows) => {
+  connection.query("SELECT id, name, email, created_at, role FROM users", (err, rows) => {
     if (err) {
       console.error("Error fetching categories data:", err.message);
       return res.status(500).json({
