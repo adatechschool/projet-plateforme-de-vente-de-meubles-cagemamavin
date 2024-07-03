@@ -1,21 +1,38 @@
-import React from 'react';
-import { Card } from 'flowbite-react';
+import React from "react";
+import { Card } from "flowbite-react";
+import MainPicture from "../components/MainPicture";
+import LandPageMiniPic from "../components/LandPageMiniPic";
 
 const Home = (props) => {
-    return (
-        <div className="container mx-auto flex justify-center items-start mt-8">
-            <Card
-                href="#"
-                className="w-full max-w-screen-lg min-h-[50vh] bg-opacity-80 backdrop-blur-sm bg-white/30 bg-[#ffedd8] rounded-md"
-            >
-                <img
-                    src="https://d.media.kavehome.com/image/upload/w_1152,c_fill,ar_1.5,f_auto/v1716811966/entities/collection-images/nora_main.jpg"
-                    alt="Example"
-                    className="w-full h-full object-cover"
-                />
-            </Card>
-        </div>
-    );
+  const images = [
+    {
+      src: "https://cdn.sklum.com/fr/wk/2660449/chaise-de-salle-a-manger-en-tissu-et-bois-de-cloda.jpg?cf-resize=gallery",
+      alt: "un meuble vitaif",
+    },
+    {
+      src: "https://rededition.com/wp-content/uploads/2018/06/Collection-REDEDITION-Cre%CC%81dit-Photo-%C2%A9-Frederic-Lucano-En-vente-www.rededition.comFL-13566-1-e1612795231761-scaled.jpg",
+      alt: "un autre meuble vitaif",
+    },
+    {
+      src: "https://rededition.com/wp-content/uploads/2018/06/Collection-REDEDITION-Cre%CC%81dit-Photo-%C2%A9-Frederic-Lucano-En-vente-www.rededition.comFL-13566-1-e1612795231761-scaled.jpg",
+      alt: "un troisième meuble vitaif",
+    },
+    // ajoutez autant d'images que vous le souhaitez
+  ];
+  images.map((image, index) => {
+    console.log(image.src);
+  });
+  return (
+    <div className="grid grid-rows-2">
+      <div className="h-full">
+        <MainPicture />
+      </div>
+      <div className="grid grid-cols-3 gap-2 h-full">
+        {images.map((image, index) => (
+          <LandPageMiniPic key={index} src={image.src} alt={image.alt} />
+        ))}
+      </div>
+    </div>
+  );
 };
-
 export default Home;
