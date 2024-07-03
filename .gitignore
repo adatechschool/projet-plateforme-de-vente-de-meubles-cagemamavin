@@ -1,10 +1,4 @@
 node_modules/
 config.env
-<<<<<<< HEAD
 furniture_db.sql
 package-lock.json
-package.json
-=======
-package.json
-package-lock.json
->>>>>>> front
