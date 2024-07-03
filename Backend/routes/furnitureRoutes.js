@@ -1,9 +1,9 @@
 "use strict";
 const express = require("express");
 const router = express.Router();
-const mysql2 = require("mysql2/promise");
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+// const mysql2 = require("mysql2/promise");
+// const dotenv = require("dotenv");
+// dotenv.config({ path: "./config.env" });
 
 const connection = require("./../db.js");
 

@@ -28,7 +28,7 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/catalogue", furnitureRoutes); // Example: /api/v1/catalogue
 app.use("/api/v1/canapes", furnitureRoutes);  // Example: /api/v1/canapes
-app.use("/api/v1/canapes/:id", furnitureRoutes); // Example: /api/v1/canapes/:id
+// app.use("/api/v1/canapes/:id", furnitureRoutes); // Example: /api/v1/canapes/:id
 
 const port = process.env.PORT_SERVER || 8000;
 const server = app.listen(port, () => {

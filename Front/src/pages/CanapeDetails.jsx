@@ -13,7 +13,8 @@ const CanapeDetails = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setCanape(data);
+                console.log("Received data:", data)
+                setCanape(data.data.canape);
             } catch (error) {
                 console.error('Error fetching data:', error);
                 setCanape(null); // Reset canape state on error
