@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `furniture_shop`.`furnitures` (
   `height` INT NULL DEFAULT NULL,
   `posted_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` INT NULL DEFAULT NULL,
+  `image` VARCHAR(2048) NULL DEFAULT NULL,  -- Ajout de la colonne pour l'URL de l'image
   PRIMARY KEY (`id`),
 INDEX `fk_furnitures_category` (`category_id` ASC) VISIBLE,
 
