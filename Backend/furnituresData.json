@@ -68,5 +68,45 @@
         "height": 85,
         "category_id": 1,
         "image": "https://www.homesalons.fr/images/materials/435/original.webp"
+    },
+    {
+        "name": "Chaise Nebai",
+        "description": "Grâce à ses formes solides et imposantes, Nebai suit la tendance des volumes épais tout en conservant un design équilibré par rapport à ses proportions généreuses et un dossier enveloppant qui offre le maximum de confort et de commodité.",
+        "price": 149,
+        "length": 51,
+        "width": 47,
+        "height": 75,
+        "category_id": 2,
+        "image": "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1714717534/products/C0100117SO12_1V01.jpg"
+    },
+    {
+        "name": "Chaise de bureau Tissiana",
+        "description": "Chaise de bureau recouverte de tapisserie en chenille.\nSiège aux lignes courbes et accoudoirs.\nSiège pivotant, à roulettes et avec hauteur réglable.",
+        "price": 109,
+        "length": 55,
+        "width": 68,
+        "height": 77,
+        "category_id": 2,
+        "image": "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1709557285/products/C0200006BF15_1V01.jpg"
+    },
+    {
+        "name": "Table Argo",
+        "description": "La singularité d’Argo réside dans sa base unique : des pieds entrecroisés qui lui apportent élégance, fermeté et confort. De plus, Argo adopte la forme et les dimensions qui conviennent le mieux à votre espace. Des silhouettes linéaires ou des contours arrondis ? Choisissez le design qui s’adapte le mieux à votre espace et apportez une touche de modernité à votre intérieur.",
+        "price": 489,
+        "length": 180,
+        "width": 100,
+        "height": 75,
+        "category_id": 3,
+        "image": "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1717399718/products/C409C01_1V01.jpg"
+    },
+    {
+        "name": "Table Lenon",
+        "description": "La collection Lenon transmet élégance et polyvalence grâce à son design aux bords arrondis et aux reliefs de ses portes. Collection réalisée en placage et bois de chêne et disponible en finition naturelle et noire. Lenon est idéale pour créer des atmosphères chaleureuses et modernes dans tous les types d’espace.",
+        "price": 1280,
+        "length": 200,
+        "width": 90,
+        "height": 77,
+        "category_id": 3,
+        "image": "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1714718486/products/T0200008MM40_1V01.jpg"
     }
 ]

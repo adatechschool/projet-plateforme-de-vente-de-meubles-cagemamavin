@@ -49,7 +49,7 @@ async function seedDatabase() {
 
       await connection.execute(
         "INSERT INTO furnitures (name, description, price, length, width, height, category_id, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-        [furniture.name, furniture.description, furniture.price, furniture.length, furniture.width, furniture.height, furniture.CategoryId, furniture.image]
+        [furniture.name, furniture.description, furniture.price, furniture.length, furniture.width, furniture.height, furniture.categoryId, furniture.image]
       );
     }
 
