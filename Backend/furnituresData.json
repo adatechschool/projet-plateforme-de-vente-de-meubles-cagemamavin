@@ -7,6 +7,7 @@
         "width": 174,
         "height": 69,
         "category_id": 1,
+        "quantity":20,
         "image": "https://d.media.kavehome.com/image/upload/w_1280,c_fill,g_auto,ar_1.5,f_auto,dpr_2/v1709575640/products/S572LN19_1V01.jpg"
     },
     {
@@ -17,6 +18,7 @@
         "width": 87,
         "height": 77,
         "category_id": 1,
+        "quantity":20,
         "image": "https://d.media.kavehome.com/image/upload/w_1280,c_fill,g_auto,ar_1.5,f_auto,dpr_2/v1709549024/products/S490PT86_1V01.jpg"
     },
     {
@@ -27,6 +29,7 @@
         "width": 90,
         "height": 85,
         "category_id": 1,
+        "quantity":20,
         "image": "https://www.lamaisonconvertible.fr/cdn/shop/files/VITFINNTIS-Photo_20packshot_20canap_C3_A9_20convertible_20Finn_20tissu_20Fluf_20Eucalyptus_202_13c18f96-1728-4e7e-8ccb-d2a002b4319c.jpg?v=1714404722&width=1646"
     },
     {
@@ -37,6 +40,7 @@
         "width": 95,
         "height": 90,
         "category_id": 1,
+        "quantity":20,
         "image": "https://www.produitinterieurbrut.com/temp-pictures/canape-en-cuir-chesterfield-jahn-146180_1600.jpg"
     },
     {
@@ -47,6 +51,7 @@
         "width": 95,
         "height": 90,
         "category_id": 1,
+        "quantity":20,
         "image": "https://rededition.com/wp-content/uploads/2018/06/Collection-REDEDITION-Cre%CC%81dit-Photo-%C2%A9-Frederic-Lucano-En-vente-www.rededition.comFL-13566-1-e1612795231761-scaled.jpg"
     },
     {
@@ -57,6 +62,7 @@
         "width": 90,
         "height": 85,
         "category_id": 1,
+        "quantity":20,
         "image": "https://resize.elle.fr/article/var/plain_site/storage/images/deco/pieces/salon/meubles-objets/canape-convertible-design/70436200-9-fre-FR/15-canapes-convertibles-design-pour-allier-style-et-confort.jpg"
     },
     {
@@ -67,6 +73,7 @@
         "width": 90,
         "height": 85,
         "category_id": 1,
+        "quantity":20,
         "image": "https://www.homesalons.fr/images/materials/435/original.webp"
     },
     {

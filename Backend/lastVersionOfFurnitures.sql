@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `furniture_shop`.`furnitures` (
   `height` INT NULL DEFAULT NULL,
   `posted_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` INT NULL DEFAULT NULL,
+  `quantity`INT NULL DEFAULT NULL,
   `image` VARCHAR(2048) NULL DEFAULT NULL,  -- Ajout de la colonne pour l'URL de l'image
   PRIMARY KEY (`id`),
 INDEX `fk_furnitures_category` (`category_id` ASC) VISIBLE,
@@ -121,6 +122,21 @@ CREATE TABLE IF NOT EXISTS `furniture_shop`.`orders_products` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `Basket cart`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `furniture_shop`.`cart`(
+`id` INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (`id`),
+`user_id` INT NOT NULL,
+`furniture_id` INT NOT NULL ,
+`quantity` INT NOT NULL DEFAULT 1,
+`created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (`user_id`) REFERENCES `furniture_shop`.`users` (`id`),
+  FOREIGN KEY (`furniture_id`) REFERENCES `furniture_shop`.`furnitures` (`id`)
+  );
+  
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

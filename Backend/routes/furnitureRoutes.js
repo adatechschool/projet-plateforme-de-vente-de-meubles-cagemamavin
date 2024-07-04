@@ -99,7 +99,7 @@ const getFurnitureById = (req, res, next) => {
 }
 
 const createFurniture = (req, res, next) => {
-  const { name, description, price, length, width, height, category_id, image } =
+  const { name, description, price, length, width, height, category_id, image,quantity } =
     req.body;
 
   if (!name || !price) {
@@ -109,12 +109,12 @@ const createFurniture = (req, res, next) => {
     });
   }
 
-  const query = `INSERT INTO furnitures (name, description, price, length, width, height, category_id, image) 
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+  const query = `INSERT INTO furnitures (name, description, price, length, width, height, category_id, image,quantity) 
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
   connection.query(
     query,
-    [name, description, price, length, width, height, category_id, image],
+    [name, description, price, length, width, height, category_id, image,quantity],
     (err, results) => {
       if (err) return handleErrors(err, res);
 
@@ -129,6 +129,7 @@ const createFurniture = (req, res, next) => {
           width,
           height,
           category_id,
+          quantity,
           image,
         },
       });
