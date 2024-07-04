@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Catalogue from "./pages/Catalogue";
@@ -15,7 +20,7 @@ import Header from "./components/Header";
 import "./index.css";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
-
+import SignupCard from "./components/SignupCard";
 function App() {
   return (
     <>
@@ -26,6 +31,7 @@ function App() {
           </header>
           <main className="flex-grow overflow-y-auto bg-[#F2EEED]">
             <Routes>
+              <Route path="/" element={<Navigate to="/home" />} />
               <Route path="/home" element={<Home />} />
               <Route path="/catalogue" element={<Catalogue />} />
               <Route path="/canapes" element={<Canapes />} />
@@ -36,6 +42,7 @@ function App() {
               <Route path="/tables/:id" element={<TableDetails />} />
               <Route path="/panier" element={<Panier />} />
               <Route path="/connexion" element={<Connexion />} />
+              <Route path="/signup" element={<SignupCard />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
