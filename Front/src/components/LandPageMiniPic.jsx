@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const LandPageMiniPic = ({ src, alt }) => {
-  return <img src={src} alt={alt} className="w-full h-full object-cover" />;
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="block h-[20em] w-[20em] rounded-lg object-cover object-center"
+    />
+  );
 };
 
 LandPageMiniPic.propTypes = {
