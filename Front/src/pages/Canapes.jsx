@@ -14,7 +14,14 @@ const Canapes = () => {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
-                setCanapes(data.data.categories);
+                console.log("Data fetched for Canapes:", data);
+
+                // Filtrer les canapés avec category_id = 1
+                const filteredCanapes = data.data.furnitures.filter(canape => canape.category_id === 1);
+
+
+                setCanapes(filteredCanapes);
+
             } catch (error) {
                 console.error("Error fetching canapés", error);
             }

@@ -12,7 +12,8 @@ const CataloguePage = () => {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
-                setFurnitures(data.data.categories); // Supposant que la réponse est structurée comme { status: 'success', data: { categories: [...] } }
+                setFurnitures(data.data.furnitures); // Supposant que la réponse est structurée comme { status: 'success', data: { categories: [...] } }
+                console.log("data ", data)
             } catch (error) {
                 console.error('Error fetching furnitures:', error);
             }
@@ -20,6 +21,7 @@ const CataloguePage = () => {
 
         fetchFurnitures();
     }, []);
+
 
     return (
         <div className="container mx-auto p-4">

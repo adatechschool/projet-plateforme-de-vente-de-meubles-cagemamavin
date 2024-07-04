@@ -14,7 +14,7 @@ const CanapeDetails = () => {
                 }
                 const data = await response.json();
                 console.log("Received data:", data)
-                setCanape(data.data.canape);
+                setCanape(data.data.furniture);
             } catch (error) {
                 console.error('Error fetching data:', error);
                 setCanape(null); // Reset canape state on error
