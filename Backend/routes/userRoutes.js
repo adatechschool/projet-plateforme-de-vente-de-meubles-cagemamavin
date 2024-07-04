@@ -29,21 +29,18 @@ const getAllUsers = (req, res, next) => {
   });
 };
 
-// Function to get user by id
+// Function to get user by name
 const getUserById = (req, res, next) => {
   const id = req.params.id;
-  console.log(`Fetching user with ID: ${id}`); // Ajout de journalisation
+  console.log(`Fetching user with ID: ${id}`);
 
   connection.query("SELECT * FROM users WHERE id = ?", [id], (err, rows) => {
-    if (err) {
-      console.log(`Database error: ${err.message}`); // Ajout de journalisation
-      return handleErrors(err, res);
-    }
+    if (err) return handleErrors(err, res);
 
-    console.log(`Rows returned: ${rows.length}`); // Ajout de journalisation
+    console.log(`Rows returned: ${rows.length}`);
 
     if (rows.length === 0) {
-      console.log(`No user found with ID: ${id}`); // Ajout de journalisation
+      console.log(`No user found with ID: ${id}`);
       return res.status(404).json({
         status: "fail",
         message: `No user found with id ${id}`,
@@ -90,6 +87,7 @@ const createUser = (req, res, next) => {
 };
 
 router.route("/").get(getAllUsers).post(createUser);
+router.route("/users").get(getAllUsers);
 router.route("/:id").get(getUserById);
 
 // router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);

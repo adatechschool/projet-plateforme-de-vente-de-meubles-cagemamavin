@@ -31,9 +31,9 @@ const Compte = () => {
         <div className="user-details p-4">
             <div key={user.id} className="flex items-center" >
                 <div className="ml-4">
-                    <h1 className="text-2xl font-bold">{user.name}</h1>
+                    <h1 className="text-2xl font-bold">Paramètres du compte</h1>
                     <div>
-                        <h2 className="text-2xl font-bold">Paramètres de connexion</h2>
+                        <p className="text-2xl mt-4">{user.name}</p>
                         <p className="text-lg mt-4">email: {user.email}</p>
                         <p className="text-lg mt-4">Mot de passe: {user.password}</p>
                     </div>
