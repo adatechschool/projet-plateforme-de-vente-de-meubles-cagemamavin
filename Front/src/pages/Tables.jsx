@@ -9,13 +9,17 @@ const Tables = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("https://run.mocky.io/v3/ee164a5e-a3ab-4d7d-8388-23ca566aa010");
+                const response = await fetch("http://localhost:8000/api/v1/tables");
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
-                setTables(data);
-                console.log(data)
+
+                const filteredTables = data.data.furnitures.filter(table => table.category_id === 3);
+
+
+                setTables(filteredTables);
+                console.log("data ", data)
             } catch (error) {
                 console.error("Error fetching tables", error);
             }

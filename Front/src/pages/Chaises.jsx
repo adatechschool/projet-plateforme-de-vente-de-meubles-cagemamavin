@@ -8,13 +8,17 @@ const Chaises = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("https://run.mocky.io/v3/586a4558-8bff-4c63-a368-8596516d4b2c");
+                // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des chaises
+                const response = await fetch('http://localhost:8000/api/v1/chaises');
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
-                setChaises(data);
+
+                const filteredChaises = data.data.furnitures.filter(chaise => chaise.category_id === 2);
+
+
+                setChaises(filteredChaises);
                 console.log(data)
             } catch (error) {
                 console.error("Error fetching chaises", error);
@@ -25,11 +29,11 @@ const Chaises = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Chaises</h1>
-            <div className="grid grid-cols-4 gap-5">
-                {chaises.map(chaise => (
-                    <div key={chaise.id} className="grid grid-cols-1 gap-5 mb-4">
+        <div className="container mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Chaises</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {chaises.map((chaise) => (
+                    <div key={chaise.id} className="bg-white shadow-md rounded-md p-4">
                         <div className="bg-white shadow-md rounded p-4">
                             <Link to={`/chaises/${chaise.id}`}>
                                 <img src={chaise.image} style={{ cursor: 'pointer' }} alt={chaise.name} className="w-full h-48 object-cover" />
