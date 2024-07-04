@@ -20,6 +20,7 @@ import Header from "./components/Header";
 import "./index.css";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
+import Compte from './pages/Compte';
 import SignupCard from "./components/SignupCard";
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/signup" element={<SignupCard />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/compte/:id" element={<Compte />} />
             </Routes>
           </main>
           <footer>
