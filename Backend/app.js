@@ -2,7 +2,6 @@ const express = require("express");
 // const mysql2 = require("mysql2");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const cors = require('cors');
 dotenv.config({ path: "./config.env" });
 const router = express.Router();
 
@@ -13,11 +12,11 @@ const authRoutes = require("./routes/authRoutes");
 const cartRoutes = require("./routes/cartRoutes");
 
 const app = express();
-app.use(cors()); // This will allow all cross-origin requests
+
 app.use(express.json());
 //middleware function provided by the Express framework. It is used to parse incoming request bodies in JSON format
 
-// Middleware pour activer CORS
+// Middleware pour activer CORS This will allow all cross-origin requests
 app.use(cors());
 
 // Middleware to log request headers and add requestTime property
