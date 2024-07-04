@@ -1,21 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import personIcon from '../assets/person.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import logOut from "../assets/logOut.svg";
+import logIn from "../assets/logIn.svg"; // Add the new icon here
+import { useAuth } from "../context/AuthContext"; // Import the Auth context
 
 const Compte = () => {
-    return (
-        <div className="relative">
-            {/* Icône person */}
-            <Link to="/connexion">
-                <img
-                    src={personIcon}
-                    alt="Mon compte"
-                    className="h-6 w-6 cursor-pointer"
-                />
-            </Link>
+  const { isAuthenticated } = useAuth(); // Destructure isAuthenticated from Auth context
 
-        </div>
-    );
+  return (
+    <div className="relative">
+      <Link to={isAuthenticated ? "/profile" : "/connexion"}>
+        <img
+          src={isAuthenticated ? logIn : logOut}
+          alt="Mon compte"
+          className="bg-[#ddd0c8] h-6 w-6 cursor-pointer"
+        />
+      </Link>
+    </div>
+  );
 };
 
 export default Compte;

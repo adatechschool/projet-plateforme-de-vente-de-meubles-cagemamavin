@@ -7,8 +7,8 @@ dotenv.config({ path: "./config.env" });
 
 const signUp = async (req, res) => {
   const { name, email, password, role } = req.body;
-  // const token = require("crypto").randomBytes(64).toString("hex");
-  // console.log(token);
+  const token = require("crypto").randomBytes(64).toString("hex");
+  console.log(token);
   process.env.JWT_SECRET = token;
   if (!email || !password) {
     return res
