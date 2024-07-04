@@ -20,11 +20,11 @@ function App() {
   return (
     <>
       <Router>
-        <div className="max-h-screen text-custom min-h-screen flex flex-col">
+        <div className="flex flex-col h-screen">
           <header className="sticky top-0">
             <Header />
           </header>
-          <main className="flex-grow overflow-y-auto bg-[#F2EEED]">
+          <main className="text-color-custom flex flex-col flex-grow overflow-y-auto bg-[#F2EEED]">
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/catalogue" element={<Catalogue />} />
