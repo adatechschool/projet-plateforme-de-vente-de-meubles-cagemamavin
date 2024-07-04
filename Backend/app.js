@@ -38,7 +38,6 @@ app.use("/api/v1/tables", furnitureRoutes);
 // app.use("/api/v1/canapes/:id", furnitureRoutes); // Example: /api/v1/canapes/:id
 app.use("/api/v1/addcart", cartRoutes);
 
-
 const port = process.env.PORT_SERVER || 8000;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
