@@ -9,7 +9,7 @@ const Compte = () => {
 
   return (
     <div className="relative">
-      <Link to={isAuthenticated ? "/profile" : "/connexion"}>
+      <Link to={isAuthenticated ? "/compte" : "/connexion"}>
         <img
           src={isAuthenticated ? logIn : logOut}
           alt="Mon compte"
