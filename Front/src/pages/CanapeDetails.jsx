@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+const handleClick = () => {
+    alert('Le bouton a été cliqué !');
+};
+
 const CanapeDetails = () => {
     const { id } = useParams();
     const [canape, setCanape] = useState(null);
@@ -39,6 +43,9 @@ const CanapeDetails = () => {
                     <p className="text-lg mt-4">Longueur: {canape.length}</p>
                     <p className="text-lg mt-4">Profondeur: {canape.width}</p>
                     <p className="text-lg mt-4">Hauteur: {canape.height}</p>
+                    <button className="bg-[#DDD0C8] hover:bg-[#C6B4A9] text-white font-bold py-4 px-8 rounded-full shadow transition duration-300 ease-in-out mt-20" onClick={handleClick}>
+                        Ajouter au panier
+                    </button>
                 </div>
             </div>
         </div>

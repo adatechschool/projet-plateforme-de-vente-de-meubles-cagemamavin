@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+const handleClick = () => {
+    alert('Le bouton a été cliqué !');
+};
+
 const TableDetails = () => {
     const { id } = useParams();
     const [table, setTable] = useState(null);
@@ -37,6 +41,9 @@ const TableDetails = () => {
                     <p className="text-lg mt-4">Longueur: {table.length}</p>
                     <p className="text-lg mt-4">Profondeur: {table.width}</p>
                     <p className="text-lg mt-4">Hauteur: {table.height}</p>
+                    <button className="bg-[#DDD0C8] hover:bg-[#C6B4A9] text-white font-bold py-4 px-8 rounded-full shadow transition duration-300 ease-in-out mt-20" onClick={handleClick}>
+                        Ajouter au panier
+                    </button>
                 </div>
             </div>
         </div>

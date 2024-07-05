@@ -15,7 +15,7 @@ const MainPicture = () => {
           Découvrez nos meubles
         </h2>
         <p className="sm:text-lg text-base text-center text-gray-200">
-          Embark on unforgettable journeys. Book your dream vacation today!
+          Laissez-vous séduire par notre sélection de meubles d'occasion !
         </p>
 
         <button
