@@ -7,7 +7,7 @@ import "../index.css";
 
 const Header = () => {
   return (
-    <header className="bg-[#ddd0c8] p-4 flex justify-between items-center sticky -z-50 top-0">
+    <header className="bg-[#ddd0c8] p-4 flex justify-between items-center sticky top-0 z-50">
       <div className="flex items-center space-x-4">
         <HamburgerMenu />
         <div className="text-4xl font-bold font-gistesy">

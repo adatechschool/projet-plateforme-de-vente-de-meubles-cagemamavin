@@ -9,16 +9,13 @@ const Tables = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("http://localhost:8000/api/v1/tables");
+                const response = await fetch("http://localhost:8000/api/v1/catalogue/tables");
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
 
-                const filteredTables = data.data.furnitures.filter(table => table.category_id === 3);
-
-
-                setTables(filteredTables);
+                setTables(data.data.furnitures);
                 console.log("data ", data)
             } catch (error) {
                 console.error("Error fetching tables", error);

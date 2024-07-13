@@ -3,14 +3,14 @@ import "../index.css";
 
 const MainPicture = () => {
   return (
-    <div className="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-45 before:z-10">
+    <div className="relative z-10 font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-45 before:z-10">
       <img
         src="https://d.media.kavehome.com/image/upload/w_1152,c_fill,ar_1.5,f_auto/v1716811966/entities/collection-images/nora_main.jpg"
         alt="Example"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="min-h-[350px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
+      <div className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
         <h2 className="sm:text-4xl text-2xl font-bold mb-6">
           Découvrez nos meubles
         </h2>

@@ -27,7 +27,7 @@ function App() {
     <>
       <Router>
         <div className="flex flex-col h-screen">
-          <header className="sticky top-0">
+          <header className="sticky top-0  z-50">
             <Header />
           </header>
           <main className="text-color-custom flex flex-col flex-grow overflow-y-auto bg-[#F2EEED]">

@@ -12,7 +12,7 @@ const ChaiseDetails = () => {
     useEffect(() => {
         const fetchChaise = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/chaises/${id}`);
+                const response = await fetch(`http://localhost:8000/api/v1/catalogue/chaises/${id}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

@@ -12,7 +12,7 @@ const TableDetails = () => {
     useEffect(() => {
         const fetchTable = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/tables/${id}`);
+                const response = await fetch(`http://localhost:8000/api/v1/catalogue/tables/${id}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

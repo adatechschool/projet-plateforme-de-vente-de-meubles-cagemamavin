@@ -3,25 +3,17 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const fs = require('fs').promises;
 
-let connection;
-
-async function initializeConnection() {
-  connection = await mysql2.createConnection({
-    host: process.env.HOST,
-    port: process.env.PORT_DB,
-    user: process.env.USERNAME_DB,
-    password: process.env.PASSWORD,
-    database: process.env.DB_NAME,
-  });
-  console.log("Connected to the MySQL server.");
-}
-
 async function seedDatabase() {
   try {
-    if (!connection) {
-      console.error("No database connection. Please initialize the connection first.");
-      return;
-    }
+    let connection = await mysql2.createConnection({
+      host: process.env.HOST,
+      port: process.env.PORT_DB,
+      user: process.env.USERNAME_DB,
+      password: process.env.PASSWORD,
+      database: process.env.DB_NAME,
+    });
+
+    console.log("Connected to the MySQL server.");
 
     // Insert categories
     await connection.execute("INSERT INTO categories (type) VALUES (?)", ["Couch"]);
@@ -84,5 +76,4 @@ async function seedDatabase() {
     console.error("Error seeding database:", error.message);
   }
 }
-
 seedDatabase();

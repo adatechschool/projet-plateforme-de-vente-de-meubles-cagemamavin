@@ -9,16 +9,13 @@ const Chaises = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des chaises
-                const response = await fetch('http://localhost:8000/api/v1/chaises');
+                const response = await fetch('http://localhost:8000/api/v1/catalogue/chaises');
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
 
-                const filteredChaises = data.data.furnitures.filter(chaise => chaise.category_id === 2);
-
-
-                setChaises(filteredChaises);
+                setChaises(data.data.furnitures);
                 console.log(data)
             } catch (error) {
                 console.error("Error fetching chaises", error);

@@ -28,13 +28,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Mounting routes
+
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/catalogue", furnitureRoutes);
-app.use("/api/v1/canapes", furnitureRoutes);
-app.use("/api/v1/chaises", furnitureRoutes);
-app.use("/api/v1/tables", furnitureRoutes);
+app.use("/api/v1/catalogue/canapes", furnitureRoutes);
+
+app.use("/api/v1/catalogue/chaises", furnitureRoutes);
+app.use("/api/v1/catalogue/tables", furnitureRoutes);
+
 // app.use("/api/v1/canapes/:id", furnitureRoutes); // Example: /api/v1/canapes/:id
 app.use("/api/v1/addcart", cartRoutes);
 

@@ -1,9 +1,6 @@
 "use strict";
 const express = require("express");
 const router = express.Router();
-// const mysql2 = require("mysql2/promise");
-// const dotenv = require("dotenv");
-// dotenv.config({ path: "./config.env" });
 const connection = require("./../db.js");
 
 // Middleware to handle errors
@@ -15,11 +12,11 @@ const handleErrors = (err, res) => {
   });
 };
 
-const getAllfurnitures = (req, res, next) => {
+const getAllfurnitures = (req, res) => {
   connection.query("SELECT * FROM furnitures", (err, rows) => {
     if (err) return handleErrors(err, res);
 
-    console.log("Categories data:");
+    console.log("All furnitures data: ");
     console.log(rows);
 
     res.status(200).json({
@@ -31,11 +28,30 @@ const getAllfurnitures = (req, res, next) => {
   });
 };
 
-const getAllCouches = (req, res, next) => {
+const getFurnituresByCategory = (req, res) => {
+  const category_id = req.category_id;
+  console.log(`Fetching furnitures for category_id: ${category_id}`);
+  connection.query("SELECT * FROM furnitures WHERE category_id = ?", [category_id], (err, rows) => {
+    if (err) return handleErrors(err, res);
+
+    console.log(`Furnitures for category_id ${category_id}:`);
+    console.log(rows);
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        furnitures: rows,
+      },
+    });
+  });
+};
+const getAllCouches = (req, res) => {
   console.log("Fetching all couches (canapés)");
   connection.query("SELECT * FROM furnitures WHERE category_id = 1", (err, rows) => {
     if (err) return handleErrors(err, res);
 
+    console.log("Couches data:");
+    console.log(rows);
 
     res.status(200).json({
       status: "success",
@@ -99,7 +115,7 @@ const getFurnitureById = (req, res, next) => {
 }
 
 const createFurniture = (req, res, next) => {
-  const { name, description, price, length, width, height, category_id, image,quantity } =
+  const { name, description, price, length, width, height, category_id, image, quantity } =
     req.body;
 
   if (!name || !price) {
@@ -114,7 +130,7 @@ const createFurniture = (req, res, next) => {
 
   connection.query(
     query,
-    [name, description, price, length, width, height, category_id, image,quantity],
+    [name, description, price, length, width, height, category_id, image, quantity],
     (err, results) => {
       if (err) return handleErrors(err, res);
 
@@ -138,11 +154,13 @@ const createFurniture = (req, res, next) => {
 };
 
 router.route("/").get(getAllfurnitures).post(createFurniture);
-router.route("/catalogue").get(getAllfurnitures);
 router.route("/canapes").get(getAllCouches);
+// router.route("/:category_id").get(getFurnituresByCategory);
 router.route("/chaises").get(getAllChairs);
 router.route("/tables").get(getAllTables);
 router.route("/:id").get(getFurnitureById);
+
+// router.route("/catalogue").get(getAllfurnitures);
 
 // router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 module.exports = router;

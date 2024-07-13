@@ -13,11 +13,11 @@ const HamburgerMenu = () => {
 
     // Rendu du composant
     return (
-        <div className="relative">
+        <div className="relative z-50">
             {/* Bouton pour ouvrir/fermer le menu */}
             <button
                 onClick={toggleMenu}
-                className="p-4 focus:outline-none"
+                className="p-4 focus:outline-none z-50"
             >
                 {/* Icône du menu hamburger */}
                 <div className="space-y-2">
@@ -29,7 +29,7 @@ const HamburgerMenu = () => {
 
             {/* Contenu du menu */}
             <div
-                className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform z-50 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
                 {/* Bouton pour fermer le menu */}
                 <button

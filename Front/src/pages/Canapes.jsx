@@ -9,18 +9,14 @@ const Canapes = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch('http://localhost:8000/api/v1/canapes');
+                const response = await fetch('http://localhost:8000/api/v1/catalogue/canapes');
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
                 console.log("Data fetched for Canapes:", data);
 
-                // Filtrer les canapés avec category_id = 1
-                const filteredCanapes = data.data.furnitures.filter(canape => canape.category_id === 1);
-
-
-                setCanapes(filteredCanapes);
+                setCanapes(data.data.furnitures);
 
             } catch (error) {
                 console.error("Error fetching canapés", error);
