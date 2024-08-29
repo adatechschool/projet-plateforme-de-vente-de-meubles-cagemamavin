@@ -6,7 +6,15 @@ package-lock.json
 =======
 Front/package.json
 package-lock.json
+<<<<<<< HEAD
 Front/package-lock.json
 Backend/package.json
 Backend/package-lock.json
 >>>>>>> test_seed
+=======
+<<<<<<< HEAD
+>>>>>>> front
+=======
+>>>>>>> 0751e1b (git ignore updated with package)
+>>>>>>> 96e8041 (git ignore updated with package)
+>>>>>>> 75a94377dd52efd235cc0807a7a252b20b764aa7

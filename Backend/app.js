@@ -2,7 +2,7 @@ const express = require("express");
 // const mysql2 = require("mysql2");
 const cors = require("cors");
 const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "../config.env" });
 const router = express.Router();
 
 // chemin de routes vers les dossiers "locaux"

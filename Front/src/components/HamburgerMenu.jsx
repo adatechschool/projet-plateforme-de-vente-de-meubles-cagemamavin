@@ -36,17 +36,31 @@ const HamburgerMenu = () => {
                     onClick={toggleMenu}
                     className="p-4 focus:outline-none"
                 >
+<<<<<<< HEAD
                     Close
+=======
+                    Home
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
                 </button>
                 {/* Navigation du menu */}
                 <nav className="p-4">
                     <ul>
+<<<<<<< HEAD
                         <li className="mb-2"><a href="/home">Home</a></li>
                         <li className="mb-2"><a href="/catalogue">Tous les produits</a></li>
                         <li className="mb-2"><a href="/canapes">Canapés</a></li>
                         <li className="mb-2"><a href="/chaises">Chaises</a></li>
                         <li className="mb-2"><a href="/tables">Tables</a></li>
+<<<<<<< HEAD
                         <li className="mb-2"><a href="/compte">Compte</a></li>
+=======
+=======
+                        <li className="mb-2"><a href="#home">Tous les produits</a></li>
+                        <li className="mb-2"><a href="#about">Canapés</a></li>
+                        <li className="mb-2"><a href="#services">Chaises</a></li>
+                        <li className="mb-2"><a href="#contact">Tables</a></li>
+>>>>>>> 5bcf936 (add Home page and  hamburgerMenu component)
+>>>>>>> 75a94377dd52efd235cc0807a7a252b20b764aa7
                     </ul>
                 </nav>
             </div>
