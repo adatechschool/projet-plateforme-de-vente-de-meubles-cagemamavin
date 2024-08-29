@@ -46,6 +46,7 @@ const HamburgerMenu = () => {
                         <li className="mb-2"><a href="/canapes">Canapés</a></li>
                         <li className="mb-2"><a href="/chaises">Chaises</a></li>
                         <li className="mb-2"><a href="/tables">Tables</a></li>
+                        <li className="mb-2"><a href="/compte">Compte</a></li>
                     </ul>
                 </nav>
             </div>

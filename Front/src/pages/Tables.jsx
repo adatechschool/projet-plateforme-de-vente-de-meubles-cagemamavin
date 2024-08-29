@@ -9,13 +9,17 @@ const Tables = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("https://run.mocky.io/v3/ee164a5e-a3ab-4d7d-8388-23ca566aa010");
+                const response = await fetch("http://localhost:8000/api/v1/tables");
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
-                setTables(data);
-                console.log(data)
+
+                const filteredTables = data.data.furnitures.filter(table => table.category_id === 3);
+
+
+                setTables(filteredTables);
+                console.log("data ", data)
             } catch (error) {
                 console.error("Error fetching tables", error);
             }
@@ -25,14 +29,14 @@ const Tables = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Tables</h1>
-            <div className="grid grid-cols-4 gap-5">
+        <div className="container mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Tables</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {tables.map(table => (
                     <div key={table.id} className="grid grid-cols-1 gap-5 mb-4">
                         <div className="bg-white shadow-md rounded p-4">
                             <Link to={`/tables/${table.id}`}>
-                                <img src={table.image} style={{ cursor: 'pointer' }} alt={table.name} className="w-full h-48 object-cover" />
+                                <img src={table.image} style={{ maxWidth: '100%', cursor: 'pointer' }} alt={table.name} className="mt-2 rounded-md" />
                             </Link>
                             <h2>{table.name}</h2>
                             <p>Prix : {table.price}€</p>

@@ -9,13 +9,19 @@ const Canapes = () => {
         const fetchData = async () => {
             try {
                 // requête HTTP GET à l'endpoint '/api....' pour récupérer les données des canapés
-                const response = await fetch("https://run.mocky.io/v3/ee164a5e-a3ab-4d7d-8388-23ca566aa010");
+                const response = await fetch('http://localhost:8000/api/v1/canapes');
                 if (!response.ok) {
                     throw new Error("Response was not ok");
                 }
                 const data = await response.json();
-                setCanapes(data);
-                console.log(data)
+                console.log("Data fetched for Canapes:", data);
+
+                // Filtrer les canapés avec category_id = 1
+                const filteredCanapes = data.data.furnitures.filter(canape => canape.category_id === 1);
+
+
+                setCanapes(filteredCanapes);
+
             } catch (error) {
                 console.error("Error fetching canapés", error);
             }
@@ -25,9 +31,9 @@ const Canapes = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Canapés</h1>
-            <div className="grid grid-cols-4 gap-5">
+        <div className="container mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Canapés</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {canapes.map(canape => (
                     <div key={canape.id} className="grid grid-cols-1 gap-5 mb-4">
                         <div className="bg-white shadow-md rounded p-4">
