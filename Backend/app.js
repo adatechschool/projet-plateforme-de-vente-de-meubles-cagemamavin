@@ -10,6 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const furnitureRoutes = require("./routes/furnitureRoutes");
 const authRoutes = require("./routes/authRoutes");
 const cartRoutes = require("./routes/cartRoutes");
+const searchRoutes = require("./routes/searchRoutes");
 
 const app = express();
 
@@ -31,14 +32,16 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/auth", authRoutes);
+
 app.use("/api/v1/catalogue", furnitureRoutes);
 app.use("/api/v1/catalogue/canapes", furnitureRoutes);
-
 app.use("/api/v1/catalogue/chaises", furnitureRoutes);
 app.use("/api/v1/catalogue/tables", furnitureRoutes);
 
-// app.use("/api/v1/canapes/:id", furnitureRoutes); // Example: /api/v1/canapes/:id
+// app.use("/api/v1/search", searchRoutes)
+
 app.use("/api/v1/addcart", cartRoutes);
+
 
 const port = process.env.PORT_SERVER || 8000;
 const server = app.listen(port, () => {

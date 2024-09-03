@@ -5,8 +5,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
 import Catalogue from "./pages/Catalogue";
 import Canapes from "./pages/Canapes";
 import CanapeDetails from "./pages/CanapeDetails";
@@ -16,12 +16,17 @@ import Tables from "./pages/Tables";
 import TableDetails from "./pages/TableDetails";
 import Panier from "./pages/Panier";
 import Connexion from "./pages/Connexion";
-import Header from "./components/Header";
-import "./index.css";
-import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Compte from './pages/Compte';
+import Search from './pages/Search';
+import Admin from "./pages/Admin";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import SignupCard from "./components/SignupCard";
+
+import "./index.css";
+
 function App() {
   return (
     <>
@@ -47,6 +52,8 @@ function App() {
               <Route path="/admin" element={<Admin />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/compte/:id" element={<Compte />} />
+              <Route path="/:type" element={<Search />} />
+
             </Routes>
           </main>
           <footer>

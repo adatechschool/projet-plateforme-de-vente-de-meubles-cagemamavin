@@ -28,23 +28,6 @@ const getAllfurnitures = (req, res) => {
   });
 };
 
-const getFurnituresByCategory = (req, res) => {
-  const category_id = req.category_id;
-  console.log(`Fetching furnitures for category_id: ${category_id}`);
-  connection.query("SELECT * FROM furnitures WHERE category_id = ?", [category_id], (err, rows) => {
-    if (err) return handleErrors(err, res);
-
-    console.log(`Furnitures for category_id ${category_id}:`);
-    console.log(rows);
-
-    res.status(200).json({
-      status: "success",
-      data: {
-        furnitures: rows,
-      },
-    });
-  });
-};
 const getAllCouches = (req, res) => {
   console.log("Fetching all couches (canapés)");
   connection.query("SELECT * FROM furnitures WHERE category_id = 1", (err, rows) => {
@@ -114,6 +97,30 @@ const getFurnitureById = (req, res, next) => {
   });
 }
 
+const getFurnituresByType = (req, res) => {
+  const type = req.params.type;
+  console.log(`Fetching furnitures for type: ${type}`);
+  connection.query("SELECT f.name AS furniture_name FROM furnitures as INNER JOIN categories AS c ON f.category_id = c.id WHERE c.type = ?", [type], (err, rows) => {
+    if (err) return handleErrors(err, res);
+
+    if (rows.length === 0) {
+      return res.status(404).json({
+        status: "fail",
+        message: `No furniture found with type ${type}`,
+      });
+    }
+    console.log(`Furnitures for category_id ${type}:`);
+    console.log(rows);
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        furnitures: rows,
+      },
+    });
+  });
+};
+
 const createFurniture = (req, res, next) => {
   const { name, description, price, length, width, height, category_id, image, quantity } =
     req.body;
@@ -155,12 +162,10 @@ const createFurniture = (req, res, next) => {
 
 router.route("/").get(getAllfurnitures).post(createFurniture);
 router.route("/canapes").get(getAllCouches);
-// router.route("/:category_id").get(getFurnituresByCategory);
 router.route("/chaises").get(getAllChairs);
 router.route("/tables").get(getAllTables);
 router.route("/:id").get(getFurnitureById);
+// router.route("/search").get(getFurnituresByType);
+router.route("/:type").get(getFurnituresByType);
 
-// router.route("/catalogue").get(getAllfurnitures);
-
-// router.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 module.exports = router;
